@@ -1,0 +1,35 @@
+spring:
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    listener:
+      type: batch
+      concurrency: 10
+      poll-timeout: 1500
+      missing-topics-fatal: false
+    consumer:
+
+      group-id: force23421919
+      retries: 0
+      buffer-memory: 33554432
+      max-poll-records: 10
+      max-poll-interval-ms: 300000
+      enable-auto-commit: true
+      auto-commit-interval: 1000
+      auto-offset-reset: latest    #earliest  #latest
+      concurrency: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+      client-id:
+    properties:
+      sasl.mechanism: PLAIN
+      security.protocol: SASL_PLAINTEXT
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="admin" password="123456";
+    producer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+
+server:
+  port: 8080
