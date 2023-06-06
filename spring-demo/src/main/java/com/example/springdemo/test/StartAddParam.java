@@ -1,10 +1,8 @@
 package com.example.springdemo.test;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -27,8 +25,8 @@ public class StartAddParam {
 
 
 
-    @Async
-    @Scheduled(fixedDelayString  = "1000")
+//    @Async
+//    @Scheduled(fixedDelayString  = "1000")
     public void serverMonitor() {
         System.out.println("test=========="+test+"=====" + LocalDateTime.now().toLocalTime() + "\r\n线程 : " + Thread.currentThread().getName());
 
