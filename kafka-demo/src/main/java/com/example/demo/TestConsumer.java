@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,10 +8,10 @@ public class TestConsumer {
     /**
      * 消费
      */
-    @KafkaListener(topics = "test-001",groupId = "test3")
-    public void listen(String record) {
-        System.out.println("【*** 消费者开始接收消息 ***】======" + record);
-    }
+//    @KafkaListener(topics = "test-001",groupId = "test3")
+//    public void listen(String record) {
+//        System.out.println("【*** 消费者开始接收消息 ***】======" + record);
+//    }
 
 
     /**

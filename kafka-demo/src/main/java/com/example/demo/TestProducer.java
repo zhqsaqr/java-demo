@@ -20,7 +20,7 @@ public class TestProducer {
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         for (int i = 15; i < 30; i++) {
             String str="测试消息======="+sdf.format(new Date())+"=="+i;
-            kafkaTemplate.send("test-001", str);
+            kafkaTemplate.send("test1", str);
         }
         return "OK";
     }
